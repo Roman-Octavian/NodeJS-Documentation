@@ -1,0 +1,10 @@
+.main {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.code {
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
