@@ -23,7 +23,7 @@ export default function GettingStarted() {
           <li>Basic computer literacy</li>
           <li>A terminal such as Git Bash or PowerShell</li>
           <li>A code editor such as Vim or Visual Studio Code</li>
-          <li>A <Link href="https://nodejs.org/en/download" target="_blank">NodeJS installation</Link>, preferably version 14+</li>
+          <li>A <Link href="https://nodejs.org/en/download" target="_blank">NodeJS installation</Link>, preferably version 17+</li>
         </ul>
         <Typography paragraph>
           Once you are ready, feel free to use the sidebar to the left to navigate the website.

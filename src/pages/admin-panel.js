@@ -5,7 +5,6 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
-import Slide from '@mui/material/Slide';
 import Avatar from '@mui/material/Avatar';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -17,29 +16,16 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
-
-export default function LoginForm({ handleLoginOpen, handleLoginClose, loginOpen}) {
+export default function AdminPanel() {
 
   return (
     <div>
-      <Button variant="contained" size="small" onClick={handleLoginOpen}>
-        Login
-      </Button>
-      <Dialog
-        fullScreen
-        open={loginOpen}
-        onClose={handleLoginClose}
-        TransitionComponent={Transition}
-      >
         <AppBar sx={{ position: 'relative' }}>
           <Toolbar>
             <IconButton
               edge="start"
               color="inherit"
-              onClick={handleLoginClose}
+              href="/"
               aria-label="close"
             >
               <CloseIcon />
@@ -59,58 +45,38 @@ export default function LoginForm({ handleLoginOpen, handleLoginClose, loginOpen
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            Admin Panel
           </Typography>
           <Box component="form" noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
+              id="filename"
+              label="File Name"
+              name="filename"
               autoFocus
             />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
+            
+            <Button 
+              variant="contained" 
+              component="label"
+              sx={{ mt: 3, mb: 2 }}>
+            Upload Page File
+            <input hidden multiple type="file" />
+            </Button>
+            
             <Button
-              href="/admin-panel"
+              type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign In
+              Create page
             </Button>
-
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid>
           </Box>
         </Box>
       </Container>
-      </Dialog>
     </div>
   );
 }
