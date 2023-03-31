@@ -122,7 +122,7 @@ function Layout(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
       <AppBar
         position="fixed"
         sx={{
@@ -195,7 +195,11 @@ function Layout(props) {
 
       <Box
         component="main"
-        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+        sx={{ 
+          flexGrow: 1, p: 3, 
+          maxWidth: 'md',
+          justifyContent: 'center', 
+          width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
       <Toolbar />
       {props.content}
