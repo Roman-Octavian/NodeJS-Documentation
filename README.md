@@ -22,7 +22,7 @@ npm install
 ```
 3. When it's done, run:
 ```
-node run dev
+npm run dev
 ```
 
 Make sure to have at least Node version 17+ for it to work.
